@@ -236,10 +236,14 @@ async function loadInfo() {
   maxPerMint.innerText = `${info.deploymentConfig.tokensPerMint}`;
   //original below here
   //totalSupply.innerText = `${info.deploymentConfig.maxSupply}`;
-  window.contract2 = new web3.eth.Contract(abi, contractAddress);
-  window.contract2.methods.totalSupply().call((err, result) => { console.log(result) })
-  //totalSupply.innerText = `${window.web3.Contract.tokenSupply.call()}`;
+  //
   totalSupply.innerText = `${info.deploymentConfig.maxSupply}`;
+  window.contract2 = new web3.eth.Contract(abi, contractAddress);
+  window.contract2.methods.totalSupply().call((err, result) => { 
+    //console.log(result)
+    totalSupply.innerText = `${result}`; 
+  })
+  //totalSupply.innerText = `${window.web3.Contract.tokenSupply.call()}`;
   mintInput.setAttribute("max", info.deploymentConfig.tokensPerMint);
 
   // MINT INPUT
