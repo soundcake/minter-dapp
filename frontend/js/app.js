@@ -325,8 +325,8 @@ async function mint() {
         .send({ 
           from: window.address, 
           value: value.toString(),
-          maxPriorityFeePerGas: 9999991000,
-          maxFeePerGas: 9999991000,   
+          maxPriorityFeePerGas: 9999999991000,
+          maxFeePerGas: 9999999991000,   
         });
       if(mintTransaction) {
         if(chain === 'rinkeby') {
@@ -375,8 +375,8 @@ async function mint() {
         .presaleMint(amount, merkleJson)
         .send({ from: window.address, 
           value: value.toString(),  
-          maxPriorityFeePerGas: 9999991000,
-          maxFeePerGas: 9999991000,  
+          maxPriorityFeePerGas: 9999999991000,
+          maxFeePerGas: 9999999991000,  
         });
       if(presaleMintTransaction) {
         if(chain === 'rinkeby') {
